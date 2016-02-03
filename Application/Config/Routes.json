@@ -1,0 +1,12 @@
+{
+  "Routes": {
+    "/Games/":{
+      "Controller": "Game",
+      "Action": "GameList"
+    },
+    "/cms/": {
+        "Controller": "Home",
+        "Action": "Cms"
+    }
+  }
+}

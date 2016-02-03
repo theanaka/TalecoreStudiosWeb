@@ -1,0 +1,26 @@
+{
+  "Application": {
+    "DefaultController": "Home",
+    "DefaultAction": "Index",
+    "DefaultLayout": "Default"
+  },
+  "Logging": {
+    "FileDirectory": "/logs/",
+    "Loggers": [
+      {
+        "FileLog": {
+          "Name": "Default",
+          "File": "default.log"
+        }
+      },
+      {
+        "DatabaseLog":{
+          "Name": "DbLog"
+        }
+      }
+    ]
+  },
+  "Debug": {
+      "DontCacheModels": false
+  }
+}
