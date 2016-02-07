@@ -96,7 +96,8 @@ class GameController extends Controller
         {
         $this->Title = "Games";
 
-        $this->Set('MastheadImage', $this->Html->ImageFilePath('bannergames.png'));
+        $mastHeadImage = $this->Models->CoverImage->Where(array('Identifier' => 'gamelist'))->First();
+        $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
 
         $games = $this->Models->Game->Where(array('IsDeleted' => '0'));
 

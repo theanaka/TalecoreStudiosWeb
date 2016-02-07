@@ -9,7 +9,9 @@ class AboutController extends Controller
     public function Index()
     {
         $this->Title = "About";
-        $this->Set('MastheadImage', $this->Html->ImageFilePath('bannerabout.png'));
+
+        $mastHeadImage = $this->Models->CoverImage->Where(array('Identifier' => 'about'))->First();
+        $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
 
         $users = $this->Models->User->All();
         foreach($users as $key => $value){

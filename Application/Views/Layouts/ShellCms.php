@@ -17,6 +17,9 @@
                     <?php echo $this->Html->Link('/StaticBlock/', 'Static Blocks');?>
                 </div>
                 <div class="entry">
+                    <?php echo $this->Html->Link('/CoverImage/', 'Cover images');?>
+                </div>
+                <div class="entry">
                     <?php echo $this->Html->Link('/Image/', 'Image');?>
                 </div>
                 <div class="entry">
