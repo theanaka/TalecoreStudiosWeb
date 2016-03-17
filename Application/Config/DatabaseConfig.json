@@ -1,8 +1,8 @@
 {
   "Database": {
     "UseDatabase": true,
-    "DatabaseType" : "PDO",
-    "Provider" : "mysql",
+    "DatabaseType" : "SqlSrv",
+    "Provider" : "",
     "Server" : "127.0.0.1",
     "Database" : "TalecoreStudios",
     "Username" : "root",
