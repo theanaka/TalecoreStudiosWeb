@@ -1,0 +1,11 @@
+{
+    "Database": {
+        "UseDatabase": true,
+        "DatabaseType" : "PDO",
+        "Provider" : "mysql",
+        "Server" : "eu-cdbr-azure-north-d.cloudapp.net",
+        "Database" : "talecorestudiosdb",
+        "Username" : "b963ced8aac932",
+        "Password" : "b60a867b"
+    }
+}

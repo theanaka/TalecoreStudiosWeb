@@ -299,7 +299,11 @@ class Core
                 $databaseProviderPath = DATABASE_DRIVER_FOLDER . 'PdoDatabase.php';
                 require_once($databaseProviderPath);
                 $this->Database = new PdoDatabase($this, $this->DatabaseConfig);
-            }else{
+            }else if($databaseType == 'SqlSrv'){
+                $databaseProviderPath = DATABASE_DRIVER_FOLDER . 'SqlSrvDatabase.php';
+                require_once($databaseProviderPath);
+                $this->Database = new SqlSrvDatabase($this, $this->DatabaseConfig);
+        }else{
                 die("Unknown database provider type: $databaseType");
             }
         }
