@@ -11,7 +11,10 @@ class AboutController extends Controller
         $this->Title = "About";
 
         $mastHeadImage = $this->Models->CoverImage->Where(array('Identifier' => 'about'))->First();
-        $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
+
+        if($mastHeadImage != null) {
+            $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
+        }
 
         $users = $this->Models->User->All();
         foreach($users as $key => $value){

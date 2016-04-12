@@ -21,7 +21,10 @@ class HomeController extends Controller
         $staticImage = $slideShowImages->First();
 
         $this->Set('SlideShowImages', $slideShowImages);
-        $this->Set('MastheadImage', $staticImage->Image->Name);
+
+        if($staticImage != null) {
+            $this->Set('MastheadImage', $staticImage->Image->Name);
+        }
 
         $this->Set('NewsPosts', $newsPosts);
 
