@@ -97,7 +97,9 @@ class GameController extends Controller
         $this->Title = "Games";
 
         $mastHeadImage = $this->Models->CoverImage->Where(array('Identifier' => 'gamelist'))->First();
-        $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
+        if($mastHeadImage) {
+            $this->Set('MastheadImage', '/Image/Display/' . $mastHeadImage->Image->Name);
+        }
 
         $games = $this->Models->Game->Where(array('IsDeleted' => '0'));
 
@@ -117,10 +119,12 @@ class GameController extends Controller
         }
 
         $mastheadImage = $this->Models->Image->Find($game->ImageId);
+        if($mastheadImage) {
+            $this->Set('MastheadImage', '/Image/Display/' . $mastheadImage->Name);
+        }
 
         $this->Title = $game->Title;
         $this->Set('Game', $game);
-        $this->Set('MastheadImage', '/Image/Display/' . $mastheadImage->Name);
 
         return $this->View();
     }
